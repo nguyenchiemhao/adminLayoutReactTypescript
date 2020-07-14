@@ -1,0 +1,5 @@
+const TEST_ACTION_TYPES = {
+    DISPATCH_ACTION: "DISPATCH_ACTION"
+}
+
+export default TEST_ACTION_TYPES;
