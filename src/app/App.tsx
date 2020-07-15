@@ -3,7 +3,9 @@ import "./App.css";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import configureStore from "../redux/configureStore";
-import Test from "../Test";
+import { Theme, ThemeProvider } from "@material-ui/core/styles";
+import Test from "../test/Test";
+import { theme, secondTheme } from "../commons/theme";
 
 function About() {
   return <h2>About</h2>;
@@ -18,24 +20,8 @@ const storeConfiguration = configureStore();
 function App() {
   return (
     <Provider store={storeConfiguration}>
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to='/'>Home</Link>
-              </li>
-              <li>
-                <Link to='/about'>About</Link>
-              </li>
-              <li>
-                <Link to='/users'>Users</Link>
-              </li>
-            </ul>
-          </nav>
-
-          {/* A <Switch> looks through its children <Route>s and
-        renders the first one that matches the current URL. */}
+      <ThemeProvider theme={theme}>
+        <Router>
           <Switch>
             <Route path='/about'>
               <About />
@@ -47,8 +33,8 @@ function App() {
               <Test />
             </Route>
           </Switch>
-        </div>
-      </Router>
+        </Router>
+      </ThemeProvider>
     </Provider>
   );
 }
