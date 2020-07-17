@@ -1,5 +1,18 @@
 #root {
-  height: 100vh;
+  height: 100%;
+}
+:root,
+body {
+  height: 100%;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  width: 100%;
 }
 body {
   margin: 0;

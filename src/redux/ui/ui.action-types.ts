@@ -1,0 +1,5 @@
+const UI_ACTION_TYPES = {
+    TOGGLE_SIDEBAR: "TOGGLE_SIDEBAR"
+}
+
+export default UI_ACTION_TYPES;
