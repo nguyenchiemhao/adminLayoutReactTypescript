@@ -1,5 +1,5 @@
 import { take } from "redux-saga/effects";
-import TEST_ACTION_TYPES from "../../actions/test/testActionTypes";
+import TEST_ACTION_TYPES from "./test.action-types";
 
 export function* testSagaListener() {
     while (true) {

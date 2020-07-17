@@ -1,7 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Dispatch } from "redux";
-import IAppState from "../models/IAppState";
-import { dispatchTest } from "../redux/actions/test/testActions";
+import IAppState from "../../redux/base-interface/IAppState";
+import { dispatchTest } from "../../redux/test/test.actions";
 import { connect } from "react-redux";
 import useStyle from "./testStyle";
 import classNames from "classnames";
@@ -17,23 +17,25 @@ function Test({ testDispatch, hello }: ITest) {
   const classes = useStyle();
 
   return (
-    <button
-      className={classNames(classes.testButton, classes.border, {
-        [classes.move]: buttonOnclick,
-      })}
-      onClick={() => {
-        setButtonOnclick(!buttonOnclick);
-        console.log("state nè", hello);
-        testDispatch("Howie");
-      }}
-    >
-      Home
-    </button>
+    <div>
+      <button
+        className={classNames(classes.testButton, classes.border, {
+          [classes.move]: buttonOnclick,
+        })}
+        onClick={() => {
+          setButtonOnclick(!buttonOnclick);
+          console.log("state nè", hello);
+          testDispatch("Howie");
+        }}
+      >
+        Home
+      </button>
+    </div>
   );
 }
 const mapStateToProps = (state: IAppState) => {
   return {
-    hello: state.test.hello,
+    hello: state.testReducer.hello,
   };
 };
 const mapDispatchToProps = (dispatch: Dispatch) => {

@@ -1,8 +1,8 @@
-import TEST_ACTION_TYPES from "../../actions/test/testActionTypes"
-import IAction from "../../../models/IAction"
-import ITestReducerState from "../../../models/ITestReducerState"
+import TEST_ACTION_TYPES from "./test.action-types"
+import IAction from "../base-interface/IAction"
+import ITestState from "./ITestState"
 
-const INITIAL_STATE: ITestReducerState = {
+const INITIAL_STATE: ITestState = {
     hello: "Hello"
 }
 
